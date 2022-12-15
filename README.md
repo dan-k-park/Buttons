@@ -1,4 +1,4 @@
-# Buttons
+# Reusable Components
 
-Some buttons with neat effects for future use.
-https://dan-k-park.github.io/Buttons/dist/
+Glorp
+https://dan-k-park.github.io/Reusable-Components/dist/

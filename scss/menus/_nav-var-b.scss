@@ -1,0 +1,79 @@
+@use '../util' as u;
+
+.nav-var-b {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+
+  gap: u.rem(10);
+
+  li {
+    list-style: none;
+  }
+
+  &__link {
+    display: inline-block;
+
+    position: relative;
+
+    padding: u.rem(5) u.rem(10);
+
+    font-size: u.rem(20);
+    text-decoration: none;
+
+    color: hsl(0, 0%, 24%);
+
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: hsl(0, 95%, 54%);
+      color: hsl(0, 0%, 100%);
+
+      &:before {
+        bottom: -8px;
+        left: -8px;
+        opacity: 1;
+      }
+      &:after {
+        top: -8px;
+        right: -8px;
+        opacity: 1;
+      }
+    }
+
+    &:before {
+      content: '';
+
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      width: 8px;
+      height: 8px;
+
+      border: 3px solid hsl(0, 95%, 54%);
+      border-width: 0 0 3px 3px;
+
+      opacity: 0;
+
+      transition: all 0.3s;
+    }
+
+    &:after {
+      content: '';
+
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 8px;
+      height: 8px;
+
+      border: 3px solid hsl(0, 95%, 54%);
+      border-width: 3px 3px 0 0;
+
+      opacity: 0;
+
+      transition: all 0.3s;
+    }
+  }
+}
