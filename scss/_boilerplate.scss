@@ -21,14 +21,19 @@ body {
 .container {
   margin: 0 auto;
   width: 1000px;
+
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  gap: u.rem(30);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: u.rem(30);
   justify-items: center;
   align-items: center;
 
-  margin: u.rem(20);
+  margin: u.rem(25) u.rem(20);
 }

@@ -1,0 +1,43 @@
+@use '../util.scss' as u;
+
+.img-caption-slide-down {
+  position: relative;
+  overflow: hidden;
+
+  width: u.rem(500);
+  height: u.rem(500);
+
+  img {
+    width: 100%;
+
+    transition: all 0.5s;
+  }
+
+  figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: hsl(0, 0, 100%);
+
+    transition: all 0.5s;
+
+    transform: translateY(-100%);
+  }
+
+  &:hover {
+    figcaption {
+      background-color: hsla(0, 0%, 0%, 0.5);
+
+      transform: translateY(0);
+    }
+  }
+}
