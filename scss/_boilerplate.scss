@@ -13,6 +13,7 @@ html {
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: hsl(0, 0%, 0%);
+  background-color: hsl(0, 0%, 84%);
   line-height: 1;
   font-weight: 400;
 }
@@ -22,8 +23,12 @@ body {
   width: 1000px;
 }
 
-ul {
-  margin: u.rem(20);
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: u.rem(30);
+  justify-items: center;
+  align-items: center;
 
-  list-style: none;
+  margin: u.rem(20);
 }

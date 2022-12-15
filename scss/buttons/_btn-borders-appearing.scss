@@ -1,0 +1,101 @@
+@use '../util.scss' as u;
+
+.btn-borders-appearing {
+  position: relative;
+
+  background-color: transparent;
+
+  border: none;
+
+  width: u.rem(180);
+  height: u.rem(60);
+
+  color: hsl(0, 0%, 0%);
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: u.rem(18);
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  &:before {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 4px;
+
+    background-color: hsl(0, 0%, 0%);
+    transition: all 0.3s;
+  }
+
+  &:after {
+    content: '';
+
+    position: absolute;
+
+    bottom: 0;
+    right: -100%;
+
+    width: 100%;
+    height: 4px;
+
+    background-color: hsl(0, 0%, 0%);
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    &:before {
+      left: 0;
+    }
+
+    &:after {
+      right: 0;
+    }
+
+    span {
+      &:before,
+      &:after {
+        top: 0;
+      }
+    }
+  }
+
+  span {
+    &:before {
+      content: '';
+
+      position: absolute;
+
+      top: -100%;
+      right: 0;
+
+      width: 4px;
+      height: 100%;
+
+      background-color: hsl(0, 0%, 0%);
+      transition: all 0.3s;
+    }
+
+    &:after {
+      content: '';
+
+      position: absolute;
+
+      top: 100%;
+      left: 0;
+
+      width: 4px;
+      height: 100%;
+
+      background-color: hsl(0, 0%, 0%);
+      transition: all 0.3s;
+    }
+  }
+}
