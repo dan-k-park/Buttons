@@ -1,0 +1,29 @@
+@use './util.scss' as u;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: hsl(0, 0%, 0%);
+  line-height: 1;
+  font-weight: 400;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+ul {
+  margin: u.rem(20);
+
+  list-style: none;
+}
