@@ -1,5 +1,9 @@
 @use './util.scss' as u;
 
+:root {
+  --white: hsl(0, 0%, 100%);
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -21,6 +25,7 @@ body {
 .container {
   margin: 0 auto;
   width: 1000px;
+  padding-bottom: u.rem(50);
 
   display: flex;
   flex-direction: column;

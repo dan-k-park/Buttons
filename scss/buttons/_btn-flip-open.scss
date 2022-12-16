@@ -16,7 +16,7 @@
   letter-spacing: 2px;
 
   background-color: transparent;
-  color: hsl(0, 0%, 100%);
+  color: var(--white);
   transition: 100 0.2s;
 
   &:before {

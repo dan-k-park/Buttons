@@ -28,7 +28,7 @@
 
     &:hover {
       background-color: hsl(0, 95%, 54%);
-      color: hsl(0, 0%, 100%);
+      color: var(--white);
 
       &:before {
         bottom: -8px;
