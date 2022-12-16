@@ -24,7 +24,7 @@ body {
 
 .container {
   margin: 0 auto;
-  width: 1000px;
+  width: 1200;
   padding-bottom: u.rem(50);
 
   display: flex;
@@ -41,4 +41,12 @@ body {
   align-items: center;
 
   margin: u.rem(25) u.rem(20);
+}
+
+.cards-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: u.rem(30);
+  justify-items: center;
+  align-items: center;
 }
