@@ -1,0 +1,27 @@
+@use '../util' as u;
+
+.card-d {
+  padding: u.rem(20) u.rem(80) u.rem(20) u.rem(20);
+  width: u.rem(400);
+  height: u.rem(250);
+
+  border-radius: 10px;
+
+  background-color: hsl(197, 100%, 86%);
+
+  transition: all 0.5s;
+
+  clip-path: circle(7% at 92% 14%);
+
+  &__heading {
+    margin-bottom: u.rem(20);
+  }
+
+  &__content {
+    font-size: u.rem(18);
+  }
+
+  &:hover {
+    clip-path: circle(70% at 50% 50%);
+  }
+}
