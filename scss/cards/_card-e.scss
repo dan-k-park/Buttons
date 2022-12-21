@@ -13,7 +13,6 @@
     height: 100%;
 
     transition: all 0.5s;
-
     clip-path: circle(70.7% at 50% 50%);
 
     &__img {
@@ -72,9 +71,7 @@
     }
 
     .img-box {
-      &__img {
-        clip-path: circle(25.1% at 50% 26%);
-      }
+      clip-path: circle(25.1% at 50% 26%);
     }
   }
 }
