@@ -43,3 +43,69 @@
     top: 50%;
   }
 }
+
+.hamburger-menuB {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: u.rem(80);
+  width: u.rem(80);
+
+  cursor: pointer;
+
+  &__burger {
+    width: u.rem(50);
+    height: u.rem(6);
+    background: var(--white);
+
+    border-radius: 5px;
+
+    transition: transform 0.6s, background-color 0.8s, top 0.6s;
+
+    &::before,
+    &::after {
+      content: '';
+
+      display: inline-block;
+
+      position: absolute;
+      width: u.rem(50);
+      height: u.rem(6);
+
+      background: var(--white);
+
+      border-radius: 5px;
+
+      // transition: all 0.5s ease-in-out;
+      transition: transform 0.5s, background-color 0.8s, top 0.8s;
+    }
+
+    &::before {
+      transform: translateY(u.rem(-16));
+    }
+
+    &::after {
+      transform: translateY(u.rem(16));
+    }
+  }
+  &.open &__burger::before {
+    opacity: 1;
+
+    transform: translateY(-50%) rotate(-315deg);
+    top: 50%;
+  }
+
+  &.open &__burger {
+    background-color: hsla(0, 0%, 100%, 0);
+  }
+
+  &.open &__burger::after {
+    opacity: 1;
+
+    transform: translateY(-50%) rotate(-225deg);
+    top: 50%;
+  }
+}
