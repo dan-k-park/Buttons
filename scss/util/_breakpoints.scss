@@ -1,0 +1,42 @@
+@use 'functions' as f;
+
+@mixin xs-screen {
+  @media (max-width: f.em(480)) {
+    @content;
+  }
+}
+
+@mixin sm-screen {
+  @media (min-width: f.em(666)) {
+    @content;
+  }
+}
+
+@mixin md-screen {
+  @media (min-width: f.em(768)) {
+    @content;
+  }
+}
+
+@mixin lg-screen {
+  @media (min-width: f.em(1024)) {
+    @content;
+  }
+}
+
+@mixin content-border {
+  @media (min-width: f.em(1100)) {
+    @content;
+  }
+}
+
+@mixin xl-screen {
+  @media (min-width: f.em(1200)) {
+    @content;
+  }
+}
+@mixin xxl-screen {
+  @media (min-width: f.em(1500)) {
+    @content;
+  }
+}

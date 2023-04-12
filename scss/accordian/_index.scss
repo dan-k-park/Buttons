@@ -1,0 +1,32 @@
+@use '../util/' as u;
+
+.accordian {
+  padding: u.rem(18);
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background-color: #eee;
+  color: #444;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: 0.4s;
+
+  &:hover {
+    background-color: #ccc;
+  }
+}
+
+.panel {
+  overflow: hidden;
+
+  padding: 0 u.rem(18);
+  max-height: 0;
+
+  background-color: white;
+
+  transition: max-height 0.3s ease-out;
+}

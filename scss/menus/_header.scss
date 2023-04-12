@@ -1,0 +1,238 @@
+@use '../util' as u;
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: u.rem(64);
+  z-index: 999999;
+
+  padding-inline: u.rem(36);
+
+  background-color: white;
+  border-bottom: 2px solid var(--gray);
+
+  transition: all 0.3s;
+
+  @include u.sm-screen {
+    padding-inline: u.rem(48);
+  }
+
+  &__container {
+    margin: 0 auto;
+
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+
+    transition: all 0.5s ease;
+
+    @include u.lg-screen {
+      border-bottom: 2px solid transparent;
+
+      justify-content: space-between;
+    }
+  }
+
+  .logo {
+    width: u.rem(44);
+    cursor: pointer;
+  }
+
+  &.scroll {
+    @include u.lg-screen {
+      transform: translateY(-100%);
+    }
+  }
+
+  .primary-nav {
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+
+    padding: min(30vh, u.rem(160)) u.rem(80);
+    margin: 0;
+
+    flex-direction: column;
+    align-items: center;
+    gap: u.rem(12);
+
+    background: hsl(0, 0%, 100%);
+
+    list-style: none;
+
+    transform: translateY(-100%);
+    transition: all 0.5s;
+
+    &[data-visible='true'] {
+      transform: translateY(100%);
+    }
+
+    @include u.lg-screen {
+      position: static;
+      padding: 0;
+
+      background: none;
+
+      gap: u.rem(24);
+      flex-direction: row;
+      transform: translateY(0%);
+
+      @include u.lg-screen {
+        gap: u.rem(32);
+      }
+    }
+
+    &__link {
+      position: relative;
+
+      display: inline-block;
+      padding-block: u.rem(8);
+
+      overflow: hidden;
+
+      &:link,
+      &:visited {
+        display: inline-block;
+
+        font-size: u.rem(24);
+        font-weight: 600;
+        text-decoration: none;
+        color: var(--black);
+
+        @include u.lg-screen {
+          font-size: u.rem(20);
+        }
+
+        @include u.xl-screen {
+          font-size: u.rem(20);
+        }
+      }
+
+      &::before {
+        content: '';
+
+        position: absolute;
+
+        bottom: 0;
+
+        width: 100%;
+        height: 2px;
+
+        background-color: transparent;
+        transition: all 0.3s;
+      }
+
+      &:hover {
+        &::before {
+          background-color: var(--btn-primary);
+        }
+      }
+
+      &--cta {
+        &:link,
+        &:visited {
+          padding: u.rem(16) u.rem(32);
+
+          border-radius: 24px;
+
+          font-weight: 600;
+          color: var(--white);
+          background-color: var(--btn-primary);
+
+          transition: opacity 0.3s;
+        }
+
+        &:hover {
+          background-color: var(--btn-primary-med);
+        }
+
+        &:before {
+          content: none;
+        }
+      }
+    }
+  }
+
+  .mobile-nav-btn {
+    position: absolute;
+    right: u.rem(36);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    background: 0;
+    border: none;
+
+    height: u.rem(30);
+    width: u.rem(28);
+
+    cursor: pointer;
+
+    @include u.sm-screen {
+      right: u.rem(48);
+    }
+
+    .hamburger {
+      position: relative;
+
+      width: 100%;
+      height: u.rem(3);
+      background: var(--black);
+
+      border-radius: 5px;
+
+      transition: transform 0.6s, background-color 0.8s, top 0.6s;
+
+      &::before,
+      &::after {
+        content: '';
+
+        display: inline-block;
+
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: u.rem(3);
+
+        background: var(--black);
+
+        border-radius: 5px;
+
+        transition: transform 0.5s, background-color 0.8s, top 0.8s;
+      }
+
+      &::before {
+        transform: translateY(u.rem(-8));
+      }
+
+      &::after {
+        transform: translateY(u.rem(8));
+      }
+    }
+    &[aria-expanded='true'] {
+      .hamburger {
+        background-color: hsla(0, 0%, 100%, 0);
+
+        &::before {
+          opacity: 1;
+
+          transform: translateY(-50%) rotate(-315deg);
+        }
+
+        &::after {
+          opacity: 1;
+
+          transform: translateY(-50%) rotate(-225deg);
+        }
+      }
+    }
+
+    @include u.lg-screen {
+      display: none;
+    }
+  }
+}
