@@ -1,0 +1,55 @@
+@use '../util/' as u;
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tab {
+  overflow: hidden;
+
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+
+  &__links {
+    float: left;
+    padding: u.rem(14) u.rem(16);
+
+    background-color: inherit;
+
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #ddd;
+    }
+
+    &:active {
+      background-color: #ccc;
+    }
+  }
+
+  &__content {
+    display: none;
+    padding: u.rem(6) u.rem(12);
+
+    border: 1px solid #ccc;
+    border-top: none;
+
+    animation: fadeEffect 1s;
+  }
+}
+
+.topright {
+  float: right;
+  cursor: pointer;
+  font-size: u.rem(28);
+}

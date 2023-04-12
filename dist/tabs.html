@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Scripts -->
+    <script defer src="tabs.js"></script>
+    <title>Tabs</title>
+  </head>
+  <body>
+    <!-- Tab links -->
+    <div class="tab">
+      <button
+        id="defaultOpen"
+        class="tab__links"
+        onclick="openTab(event, 'glorp')"
+      >
+        Glorp
+      </button>
+      <button class="tab__links" onclick="openTab(event, 'blorp')">
+        Blorp
+      </button>
+      <button class="tab__links" onclick="openTab(event, 'florp')">
+        Florp
+      </button>
+    </div>
+
+    <!-- Tab content -->
+    <div id="glorp" class="tab__content">
+      <span onclick="this.parentElement.style.display='none'" class="topright"
+        >&times</span
+      >
+      <h3>Glorp</h3>
+      <p>
+        glorp Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis
+        nulla praesentium provident!
+      </p>
+    </div>
+    <div id="blorp" class="tab__content">
+      <span onclick="this.parentElement.style.display='none'" class="topright"
+        >&times</span
+      >
+      <h3>Blorp</h3>
+      <p>blorpin Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div id="florp" class="tab__content">
+      <span onclick="this.parentElement.style.display='none'" class="topright"
+        >&times</span
+      >
+      <h3>Florp</h3>
+      <p>
+        florpin Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
+        exercitationem.
+      </p>
+    </div>
+  </body>
+</html>
